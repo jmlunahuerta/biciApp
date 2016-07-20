@@ -1,5 +1,7 @@
 {
   "name": "biciApp",
+  "version": "0.0.1",
+  "description": "This is an app for users of bicycles in the city of Seville(Spain)",
   "main": "server.js",
   "dependencies": {
     "body-parser": "~1.5.2",

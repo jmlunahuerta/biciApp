@@ -10,9 +10,26 @@ addCtrl.controller('addCtrl', function($scope, $http, $rootScope, geolocation, g
     var lat = 0;
     var long = 0;
 
-    // Set initial coordinates to the center of Madrid
-    $scope.formData.latitude = 40.416775;
-    $scope.formData.longitude = -3.70379;
+    // Set initial coordinates to the center of Seville
+    $scope.formData.latitude = 37.389092;
+    $scope.formData.longitude = -5.984459;
+
+    // Get User's actual coordinates based on HTML5 at window load
+geolocation.getLocation().then(function(data){
+
+    // Set the latitude and longitude equal to the HTML5 coordinates
+    coords = {lat:data.coords.latitude, long:data.coords.longitude};
+
+    // Display coordinates in location textboxes rounded to three decimal points
+    $scope.formData.longitude = parseFloat(coords.long).toFixed(3);
+    $scope.formData.latitude = parseFloat(coords.lat).toFixed(3);
+
+    // Display message confirming that the coordinates verified.
+    $scope.formData.htmlverified = "Yep (Thanks for giving us real data!)";
+
+    gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
+
+});
 
     // Functions
     // ----------------------------------------------------------------------------

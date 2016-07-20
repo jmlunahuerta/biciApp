@@ -1,0 +1,30 @@
+body {
+ 
+  background-color:#981616;
+}
+
+nav {
+  height: 100%;
+  background-color: black;
+}
+
+.hazte-cliente{
+  background-color: #4CAF50;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.imgSmall{
+  margin-top: 10px;
+  width: 80px;
+  height: 45px;
+}
+.styleFooter{
+  background-color: black;
+}
+
+
+#map{
+  width:645px; 
+  height:645px
+}
